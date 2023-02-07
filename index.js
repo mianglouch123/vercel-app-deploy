@@ -1,25 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-require("dotenv").config();
-const app = express();
+const express = require('express')
+const app = express()
+const port = 80
 
-app.use(cors({origin:"*"}));
-app.use(bodyParser.json());
-app.use(express.urlencoded({extended:true}));
+app.get('/', (req, res) => {
+  res.send('Bienvenido!')
+})
 
-const PORT = 80 ;
-
-
-app.get('/',(req,res)=>{
-    res.send('siuuu');
-    
-    
-    })
-
-app.listen(PORT,()=>{
-    console.log('server is started in port:3000');
-
-});
-
-
+app.listen(port, () => {
+  console.log(`Bienvenido port ${port}`)
+})
