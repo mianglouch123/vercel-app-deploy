@@ -8,16 +8,18 @@ app.use(cors({origin:"*"}));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 
-const PORT = 3000;
+const PORT = 80 ;
+
+
+app.get('/',(req,res)=>{
+    res.send('siuuu');
+    
+    
+    })
 
 app.listen(PORT,()=>{
     console.log('server is started in port:3000');
 
 });
 
-app.get('/',(req,res)=>{
-res.send('siuuu');
-
-
-})
 
